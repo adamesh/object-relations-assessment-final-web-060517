@@ -30,8 +30,8 @@ class Movie
 
   def average_rating
   # should return the average of all of the scores for the ratings of that particular movie.
-    all_ratings = self.ratings.map {|rating| rating.score}
-    all_ratings.inject{ |sum, rating| sum + rating }.to_f / all_ratings.size
+    all_ratings = self.ratings.map {|rating| rating.score.to_f}
+    all_ratings.reduce(:+) / all_ratings.size
   end
 
 end
